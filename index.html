@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CV en Ligne Nicolas Chevallier</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css" />
+        <script src="js/jquery-1.12.3.min.js"></script> 
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // MixItUp plugin
+                // http://mixitup.io
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Simple parallax effect
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+
+        };
+        
+        // Run the show!
+        filterList.init();
+        
+        
+    }); 
+    </script>
+
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class ="col-md-12">    
+                        <div id="header">
+                            <img class="header" src="img/cup.jpg" alt="cup of coffee">
+                            <h1 class="center">Nicolas Chevallier</h1>
+                            <h2 class="center"> Développeur Front-End</h2>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </header>
+        
+        <main>
+            <div class="container">
+                    <div class="row">
+                        <div class ="col-md-4">
+                            <h2>Expériences Professionnelles </h2>
+                                <ul>
+                                    <li> Juillet 2015 - Présent Technicien Qualité Automate . Phone Régie . Paris  </li>
+                                    <li> Avril 2014 - Juillet 2015 AutoEntrepreneur / Artisan . The Knight and The Rose . Tours </li>
+                                    <li> Octobre 2012 - Décembre 2013 Agent Anti-Fraude / Conseiller Clientèle . PayPal . Dundalk Irlande </li>
+                                    <li> Juillet 2012 - Octobre 2012 Analyste Qualité . Activision . Dublin Irlande </li>
+                                </ul>
+                        </div>    
+                        <div class ="col-md-4">
+                                <h2>Formation</h2>
+                                    <ul>
+                                        <li> Mars 2016 - Présent Formation en ligne Simplonline Développeur Web</li>
+                                        <li> 2004-2005 Seconde Génerale . Lycée Marmoutier . Tours </li>
+                                    </ul>    
+                        </div>            
+                        <div class ="col-md-4">
+                            
+                         <h2>Mes ambitions</h2>
+                          <p>Devenir Web Dev Front End et avoir assez de bagages Backend pour créer et gérer une base de données simple. </p>
+                        </div>
+                    </div>
+                </div> 
+               <div class="container">
+
+            <h2>Mon portfolio</h2>
+            <!--data-filter permet de filtrer les vignettes par catégorie-->
+            <ul id="filters" class="clearfix row">
+                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4">Toutes mes catégories</span></li>
+                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+            </ul>
+
+            <div id="portfoliolist"> <!--La div qui contient les vignettes des projets-->
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">             
+                        <img src="img/portfolios/logo/5.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Annuaire</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>              
+
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/app/onepage.PNG" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a href="one_page_template.html" class="text-title"> One Page Site Template</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+                            
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a href="files/ruby_exercice/openfactfood.rar" class="text-title">API Open Food Facts</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>  
+                            
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">
+                        <img src="img/portfolios/app/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a  class="text-title">Titre de mon projet HTML/CSS</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>          
+                
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/5.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a  class="text-title"> Exercice Javascript </a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                          
+                
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/icon/divshot.PNG" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a href="Semaine6/divshot.html" class="text-title">Page placement div</a>
+                                <span class="text-category">HTML/CSS</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                      
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice en Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                              
+                                                                                         
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/icon/1.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice utilisation Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/card/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet avec Ruby</a>
+                                <span class="text-category">Ruby</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                                                                    
+                
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/5.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice Javascript</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                  
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/5.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice Javascript</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>      
+
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/icon/1.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Titre de mon projet Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>                                                                                                         
+
+
+                <div class="portfolio cat2" data-cat="cat2">
+                    <div class="portfolio-wrapper">         
+                        <img src="img/portfolios/logo/5.png" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Exercice Javascript</a>
+                                <span class="text-category">Javascript</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        
+        </div><!-- container -->
+               
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class ="col-md-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.5032891599335!2d2.354750215905247!3d48.82953801069147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6718ef2b3b04f%3A0x20ff1a0cd0c8315e!2s195+Avenue+de+Choisy%2C+75013+Paris!5e0!3m2!1sfr!2sfr!4v1461488577376" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <p>Nicolas Chevallier <a href="mailto:chevalliernicolas@hotmail.fr">Email</a></p>
+                        </div>
+                    </div>
+                </div>    
+            </footer>
+        </main>
+    </body>
+</html>
